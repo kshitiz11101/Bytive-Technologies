@@ -36,6 +36,8 @@ export const register = async (req, res, next) => {
           phone,
           website,
         });
+
+        const token=await user.createJWT();
         res.status(201).send({
             success: true,
             message: "Account created successfully",
@@ -45,9 +47,10 @@ export const register = async (req, res, next) => {
               email: user.email,
               phone:user.phone,
               website:user.website,
-              
-            }
-           
+                },
+                token
+        
+
           });
         } catch (error) {
             console.log(error);
@@ -83,15 +86,15 @@ export const signIn = async (req, res, next) => {
   
       user.password = undefined;
   
-    //   const token = user.createJWT();
+      const token = user.createJWT();
       
       res.status(201).json({
         success: true,
         message: "Login successfully",
         user,
-        // token,
+        token,
       });
-      console.log(token);
+
     } catch (error) {
       console.log(error);
       res.status(404).json({ message: error.message });
