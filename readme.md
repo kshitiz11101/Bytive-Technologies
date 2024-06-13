@@ -1,4 +1,9 @@
 
+
+## Screenshot:
+
+![Screenshot 2024-06-13 234829](https://github.com/kshitiz11101/Bytive-Technologies/assets/110187324/97861364-24ca-46dd-bc2e-aebd3e65f97b)
+
 This is a simple web page displaying the details of all the registered users.
 Features:
 
