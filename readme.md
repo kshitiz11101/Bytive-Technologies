@@ -46,7 +46,7 @@ Follow these steps to set up and run the project locally.
 git clone https://github.com/kshitiz11101/Bytive-Technologies
 cd frontend
 npm install
-npm start
+npm run dev
 ```
 
 ## BACKEND
@@ -67,7 +67,7 @@ MONGO_URL=
 ```bash
 cd backend
 npm install
-npm start
+npm run dev
 ```
 ## Some Major Routes
 
