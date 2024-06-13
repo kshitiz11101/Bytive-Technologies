@@ -1,13 +1,13 @@
-/* styles.css */
+
 .user-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  /* padding: 16px; */
+ 
 }
 
 .user-card {
-  flex:300px; /* Each card will take at least 300px of width and will grow to fill the available space */
+  flex:300px;
   border: 1px solid #ccc;
   padding: 16px;
   border-radius: 4px;
@@ -50,15 +50,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  width: 300px;
+  width: 400px;
 }
 
 .edit-form input {
-  display: block;
+  display: flex;
   margin-bottom: 8px;
   padding: 8px;
   width: 100%;
   box-sizing: border-box;
+  color: gray;
 }
 
 .edit-form button {

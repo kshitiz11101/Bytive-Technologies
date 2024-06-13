@@ -1,4 +1,3 @@
-// ERROR MIDDLEWARE | NEXT FUNCTION
 
 const errorMiddleware = (err, req, res, next) => {
     const defaultError = {
@@ -15,7 +14,7 @@ const errorMiddleware = (err, req, res, next) => {
         .join(",");
     }
   
-    //duplicate error
+   
   
     if (err.code && err.code === 11000) {
       defaultError.statusCode = 404;

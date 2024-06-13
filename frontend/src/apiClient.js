@@ -6,7 +6,7 @@ export const getAllUsers=async()=>{
     console.log(res.data);
     return res.data;
 };
-export const updateUser=async(userId,userData)=>{
+export const updateUser=async(userData)=>{
     const res=await axios.put(`${API_URL}/update-user`,userData,{
     headers:{
         Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -16,11 +16,11 @@ export const updateUser=async(userId,userData)=>{
     return res.data;
 }
 export const deleteUser = async (userId) => {
-    const response = await axios.delete(`${API_URL}/delete-user`, {
+    const response = await axios.delete(`${API_URL}/delete-user/${userId}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
-    });
-    console.log('User deleted successfully',res.data);
+    });6
+    console.log('User deleted successfully',response.data);
     return response.data;
   };

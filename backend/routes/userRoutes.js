@@ -6,5 +6,5 @@ const router=express.Router();
 router.post("/get-user",userAuth,getUser);
 router.put("/update-user",updateUser);
 router.get("/",getAllUsers);
-router.delete("/delete-user",userAuth,deleteUser);
+router.delete("/delete-user/:id",userAuth,deleteUser);
 export default router;

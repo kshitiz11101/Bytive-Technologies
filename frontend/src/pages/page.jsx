@@ -6,7 +6,6 @@ import { adventurer } from '@dicebear/collection';
 import { FcLike } from 'react-icons/fc';
 import { CiEdit, CiGlobe } from 'react-icons/ci';
 import { MdDelete, MdOutlineEmail, MdOutlineLocalPhone } from 'react-icons/md';
-
 const Page = () => {
   const [users, setUsers] = useState([]);
   const [editingUser, setEditingUser] = useState(null);
@@ -39,16 +38,22 @@ const Page = () => {
       email: user.email,
       phone: user.phone,
       website: user.website,
+      user:{
+        userId:user._id
+      }
     });
-    // console.log('Editing user set to:', user); // Debug log
+   
   };
 
   const handleDeleteClick = async (userId) => {
     try {
+      
       await deleteUser(userId);
-      setUsers(users.filter((user) => user._id !== userId));
+      toast.success("User deleted successfully");
+     fetchUsers();
     } catch (error) {
       console.error('Error deleting user:', error);
+      toast.error("Error in deleting user");
     }
   };
 
@@ -62,13 +67,15 @@ const Page = () => {
 
   const handleUpdateUser = async () => {
     try {
-      // Ensure userId is correctly accessed
-      const userourId = editingUser.user.userId;
-      await updateUser(userourId, userData);
+    
+    
+      await updateUser( userData);
       setEditingUser(null);
       fetchUsers();
+     
     } catch (error) {
       console.error('Error updating user:', error);
+     
     }
   };
 
@@ -79,7 +86,7 @@ const Page = () => {
 
   return (
     <div>
-      {/* <h1>Users</h1> */}
+    
       <div className='user-grid'>
         {users.map((user) => (
           <div key={user._id} className="user-card">
@@ -97,7 +104,7 @@ const Page = () => {
             <div className='user-icons'>
             <FcLike className='icon' size={30} style={{ cursor: 'pointer' }} />
             <CiEdit className='icon' size={30} style={{ cursor: 'pointer' }} onClick={() => handleEditClick(user)} />
-            <MdDelete className='icon' size={30} style={{ cursor: 'pointer' }} onClick={() => handleDeleteClick(user.userId)} />
+            <MdDelete className='icon' size={30} style={{ cursor: 'pointer' }} onClick={() => handleDeleteClick(user._id)} />
           </div>
           </div>
         ))}
