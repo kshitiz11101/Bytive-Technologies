@@ -1,0 +1,66 @@
+/* styles.css */
+.user-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  /* padding: 16px; */
+}
+
+.user-card {
+  flex:300px; /* Each card will take at least 300px of width and will grow to fill the available space */
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 4px;
+  position: relative;
+  background-color: #f9f9f9;
+  transition: transform 0.2s;
+}
+
+
+.user-card:hover {
+  transform: scale(1.02);
+}
+
+.user-card h2 {
+  margin: 0 0 8px;
+}
+
+.user-card p {
+  margin:2px 0 0 0;
+}
+
+.user-card .icon {
+  margin-right: 4px;
+  cursor: pointer;
+ 
+ 
+}
+.user-icons{
+  background-color: rgb(228, 226, 226);
+  
+}
+
+.edit-form {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 8px;
+  border-radius: 4px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 300px;
+}
+
+.edit-form input {
+  display: block;
+  margin-bottom: 8px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.edit-form button {
+  margin-right: 8px;
+}
