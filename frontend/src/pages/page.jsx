@@ -49,11 +49,11 @@ const Page = () => {
     try {
       
       await deleteUser(userId);
-      toast.success("User deleted successfully");
+   
      fetchUsers();
     } catch (error) {
       console.error('Error deleting user:', error);
-      toast.error("Error in deleting user");
+     
     }
   };
 
