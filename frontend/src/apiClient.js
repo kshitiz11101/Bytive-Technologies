@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL="http://localhost:8800/api-v1/users";
+const API_URL="https://bytive-technologies.onrender.com/api-v1/users";
 
 export const getAllUsers=async()=>{
     const res=await axios.get(`${API_URL}/`);
